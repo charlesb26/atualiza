@@ -378,12 +378,25 @@ if ($total_reg > 0) {
 
 	<input type="hidden" name="id" id="id" value="<?php echo $id ?>">
 
+	<br>
+	<br>
 
-	<div align="right">
-		<a href="./conjugue.php">
-		<button class="btn btn-primary" type="submit">Próximo</button>
-		</a>
-	</div>
+
+		<div class=" d-inline">
+			<a href="./index.php">
+			<button class="btn btn-primary" type="button">anterior</button>
+			</a>
+		</div>
+
+
+		<div class="d-inline">
+			<a href="./conjugue.php">
+			<button class="btn btn-primary" type="submit">Próximo</button>
+			</a>
+		</div>
+
+
+
 
 	<small>
 		<div id="mensagem-economico" align="center"></div>

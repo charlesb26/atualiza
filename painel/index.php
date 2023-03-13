@@ -8,6 +8,8 @@ if(@$_SESSION['id_beneficiario'] == ""){
 
 require_once("cabecalho.php");
 
+
+
 $id = $_SESSION['id_beneficiario'];
 //recuperar os dados do usuário logado
 $query = $pdo->query("SELECT * FROM beneficiarios where id = '$id' ");
@@ -18,7 +20,27 @@ if($total_reg > 0){
 	$nome_ben = $res[0]['nome'];
 	$nome_infor_ben = $res[0]['nome_infor'];
 	$nomesocial_ben = $res[0]['nomesocial'];
-	//$foto_ben = $res[0]['foto'];
+	$sexo_ben = $res[0]['sexo'];
+	$racacor_ben = $res[0]['racacor'];
+	$etnia_ben = $res[0]['etnia'];
+	$tipodoc_ben = $res[0]['tipodoc'];
+	$docnum_ben = $res[0]['docnum'];
+	$docorgao_ben = $res[0]['docorgao'];
+	$docexpedicao_ben = $res[0]['docexpedicao'];
+	$estadocivil_ben = $res[0]['estadocivil'];
+	$natura_ben = $res[0]['natura'];
+	$nacional_ben = $res[0]['nacional'];
+	$religiao_ben = $res[0]['religiao'];
+	$datanasc_ben = $res[0]['datanasc'];
+	$pai_ben = $res[0]['pai'];
+	$mae_ben = $res[0]['mae'];
+	$escolaridade_ben = $res[0]['escolaridade'];
+	$ensino_ben = $res[0]['ensino'];
+	$reservista_ben = $res[0]['reservista'];
+	$clt_ben = $res[0]['clt'];
+	$cartaosus_ben = $res[0]['cartaosus'];
+	$cartaovacina_ben = $res[0]['cartaovacina'];
+	$foto_ben = $res[0]['foto'];
 	$cpf_ben = $res[0]['cpf'];
 	$sexo_ben = $res[0]['sexo'];
 }
@@ -51,7 +73,7 @@ if($total_reg > 0){
 	<div class="col-md-2 col-6">
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label">Data de Nascimento</label>
-			<input name="datanasc" id="datanasc" type="date" class="form-control" required>
+			<input name="datanasc" id="datanasc" type="date" class="form-control" required value="<?= $datanasc_ben?>">
 		</div>
 	</div>
 
@@ -63,8 +85,9 @@ if($total_reg > 0){
 	<div class="col-md-2 col-4">						
 		<div class="form-group mb-3"> 
 			<label>Sexo</label> 
-			<select class="form-control" name="sexo" id="sexo" required> 
-				<option value="" selected disabled hidden>clique aqui</option>
+			<select class="form-control" name="sexo" id="sexo" required>
+				<option value="<?= $sexo_ben?>"><?= $sexo_ben?></option>
+				<option value="" disabled hidden>Clique aqui</option>
 				<option value="M">M</option>
 				<option value="F">F</option>
 			</select>
@@ -164,7 +187,8 @@ if($total_reg > 0){
 		<div class="form-group mb-3"> 
 			<label>Escolaridade</label> 
 			<select class="form-control" name="escolaridade" id="escolaridade" required>
-				<option value="" selected disabled hidden>clique aqui</option>
+			<option value="<?= $escolaridade_ben?>"><?= $escolaridade_ben?></option>
+				<option value="" disabled hidden>clique aqui</option>
 				<option value="Fundamental">Fundamental</option>
 				<option value="Médio">Médio</option>
 				<option value="Superior">Superior</option>
@@ -176,7 +200,8 @@ if($total_reg > 0){
 		<div class="form-group mb-3"> 
 			<label>Ensino</label> 
 			<select class="form-control" name="ensino" id="ensino" required>
-				<option value="" selected disabled hidden>clique aqui</option>
+				<option value="<?= $ensino_ben?>"><?= $ensino_ben?></option>
+				<option value=""disabled hidden>clique aqui</option>
 				<option value="Completo">Completo</option>
 				<option value="Incompleto">Incompleto</option>
 				<option value="Cursando">Cursando</option>
@@ -191,7 +216,8 @@ if($total_reg > 0){
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label">Documento de Identificação</label>
 			<select class="form-control" name="tipodoc" id="tipodoc" required>
-				<option value="" selected disabled hidden>clique aqui</option>
+				<option value="<?= $tipodoc_ben?>"><?= $tipodoc_ben?></option>
+				<option value="" disabled hidden>clique aqui</option>
 				<option value="Registro Geral">RG</option>
 				<option value="Registro Administrativo de Nascimento de Indígena">RANI</option>
 				<option value="Registro Nacional Migratório">RNM</option>
@@ -203,14 +229,14 @@ if($total_reg > 0){
 	<div class="col-md-3 col-6">
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label">Número documento</label>
-			<input name="docnum" type="text" class="form-control" placeholder="Digite o Nr do documento">
+			<input name="docnum" type="text" class="form-control" placeholder="Digite o Nr do documento" value="<?= $docnum_ben?>">
 		</div>
 	</div>
 
 	<div class="col-md-3 col-6">						
 		<div class="form-group mb-3"> 
 			<label for="exampleFormControlInput1" class="form-label">Órgão Emissor</label> 
-			<select class="form-control" name="docorgao" id="docorgao" required>
+			<select class="form-control" name="docorgao" id="docorgao" required >
 				<option value="" selected disabled hidden>clique aqui</option>
 				<?php
 				$query = $pdo->query("SELECT * FROM orgaoemissor");
@@ -227,7 +253,7 @@ if($total_reg > 0){
 	<div class="col-md-3 col-6">
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label">Data Emissão</label>
-			<input name="docexpedicao" id="docexpedicao" type="date" class="form-control">
+			<input name="docexpedicao" id="docexpedicao" type="date" class="form-control" value="<?= $docexpedicao_ben?>">
 		</div>
 	</div>
 
@@ -241,28 +267,28 @@ if($total_reg > 0){
 	<div class="col-md-3">
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label">Carteira Reservista</label>
-			<input name="reservista" type="text" class="form-control" placeholder="Se Houver">
+			<input name="reservista" type="text" class="form-control" placeholder="Se Houver" value="<?= $reservista_ben?>">
 		</div>
 	</div>
 
 	<div class="col-md-3">
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label">Carteira de Trabalho</label>
-			<input name="clt" type="text" class="form-control" placeholder="Se Houver">
+			<input name="clt" type="text" class="form-control" placeholder="Se Houver" value="<?= $clt_ben?>">
 		</div>
 	</div>
 
 	<div class="col-md-3">
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label">Cartão do SUS</label>
-			<input name="cartaosus" type="text" class="form-control" placeholder="Se Houver">
+			<input name="cartaosus" type="text" class="form-control" placeholder="Se Houver" value="<?= $cartaosus_ben?>">
 		</div>
 	</div>
 
 	<div class="col-md-3">
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label">Cartão de Vacina</label>
-			<input name="cartaovacina" type="text" class="form-control" placeholder="Se Houver">
+			<input name="cartaovacina" type="text" class="form-control" placeholder="Se Houver" value="<?= $cartaovacina_ben?>">
 		</div>
 	</div>
 
@@ -272,14 +298,14 @@ if($total_reg > 0){
 	<div class="col-md-6">
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label">Pai</label>
-			<input name="pai" type="text" class="form-control" placeholder="Digite o nome completo do pai">
+			<input name="pai" type="text" class="form-control" placeholder="Digite o nome completo do pai" value="<?= $pai_ben?>">
 		</div>
 	</div>
 
 	<div class="col-md-6">
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label">Mãe</label>
-			<input name="mae" type="text" class="form-control" placeholder="Digite o nome completo do mãe">
+			<input name="mae" type="text" class="form-control" placeholder="Digite o nome completo do mãe" value="<?php echo $mae_ben?>"/>
 		</div>
 	</div>
 </div>
@@ -295,7 +321,19 @@ if($total_reg > 0){
 	</div>
 	
 	<div class="col-md-1 col-2">
-		<div><img id="target-foto" src="../img/perfil/sem-perfil.jpg" class="rounded-circle" alt="example placeholder" style="width:150px;" /></div>
+		<div>
+			<img id="target-foto" src="./images/perfil/
+				<?php
+
+				if ($foto_ben == ".") {
+					echo "<img src='./images/perfil/sem-perfil.jpg'/>";
+				}else if ($foto_ben > 0) {
+					echo $foto_ben;
+				}
+
+				?>" class="rounded-circle" alt="sem foto" style="width:150px;"
+			/>
+		</div>
 	</div>
 
 </div>
