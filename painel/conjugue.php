@@ -214,10 +214,22 @@ require_once("cabecalho.php");
 </div>
 
 
-<div align="right">
-		<a href="./dependentes.php">
-		<button class="btn btn-primary" type="submit">Próximo</button>
-		</a>
+	<br>
+	<br>
+
+	<div class="position-relative"  align="center">
+		<div class="d-inline">
+			<a href="./economico.php">
+			<button class="btn btn-primary" type="button">anterior</button>
+			</a>
+		</div>
+
+
+		<div class="d-inline">
+			<a href="./conjugue.php">
+			<button class="btn btn-primary" type="submit">Próximo</button>
+			</a>
+		</div>
 	</div>
 
 	<small>

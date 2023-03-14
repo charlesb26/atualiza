@@ -33,6 +33,7 @@ $pag = 'dependentes';
 
 
 
+
 <div class="bs-example widget-shadow" style="padding:15px" id="listar">
 	<div class="load"> 
 		<!--<i class="fa fa-cog fa-spin fa-5x fa-fw"></i><span class="sr-only"></span>-->
@@ -395,6 +396,25 @@ $pag = 'dependentes';
 		</div>
 	</div>
 </div>
+
+<br>
+	<br>
+
+ 		
+	<div class="position-relative px-2" align="center">
+		<div class=" d-inline">
+			<a href="./conjugue.php">
+			<button class="btn btn-primary" type="button">anterior</button>
+			</a>
+		</div>
+
+
+		<div class="d-inline">
+			<a href="./finalizar.php">
+			<button class="btn btn-primary" type="submit">Finalizar</button>
+			</a>
+		</div>
+	</div>
 
 
 

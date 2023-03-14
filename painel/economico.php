@@ -381,7 +381,7 @@ if ($total_reg > 0) {
 	<br>
 	<br>
 
-
+	<div class="position-relative"  align="center">
 		<div class=" d-inline">
 			<a href="./index.php">
 			<button class="btn btn-primary" type="button">anterior</button>
@@ -394,7 +394,7 @@ if ($total_reg > 0) {
 			<button class="btn btn-primary" type="submit">Próximo</button>
 			</a>
 		</div>
-
+	</div>
 
 
 
